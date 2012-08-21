@@ -11,11 +11,12 @@ void compact_str(char *str, int n)
 
 	char c;
 	do {
-		c = str[read];	
+		c = str[read++];	
+
 		if(! seen[c]){
 			str[write++] = c;	
 		}
+
 		seen[c] = 1;
-		read++;
 	} while(c != '\0' && read <= n); /* We wan't to copy the null char */
 }
