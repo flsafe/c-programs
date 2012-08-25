@@ -3,12 +3,12 @@
 
 void reverse_chars(char *str, int n)
 {
+	int first = 0;
+	int temp;
+	int last = n - 1;
+
 	assert(NULL != str && "Argument str can not be null");
 	assert(n > -1 && "Argument n must be greater than 0");
-
-	int first = 0;
-	int last = n - 1;
-	int temp;
 
 	while(first < last){
 		temp = str[first];

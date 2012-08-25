@@ -7,20 +7,20 @@
  */
 char *enc_sp(char *s, int n)
 {
+	int i = 0, sp = 0, read = 0, write = 0;
+	char *new_s = NULL, c = 0;
+
 	assert(NULL != s && n >= 0 && "Invalid arguments");
 
-	int i = 0, sp = 0;
 	for(i = 0 ; i < n ; i++){
 		if(s[i] == ' '){
 			sp++;	
-		}
+		};
 	}
 
-	char *new_s = calloc((n + (2 * sp)) + 1, sizeof(char));
+	new_s = calloc((n + (2 * sp)) + 1, sizeof(char));
 	check_mem(new_s);
 	
-	int read = 0, write = 0;
-	char c;
 	do {
 		c = s[read++];
 

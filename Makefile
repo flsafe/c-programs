@@ -1,4 +1,5 @@
-CFLAGS=-g -O2 -Wall -Wextra -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)
+WFLAGS=-Wno-variadic-macros -Wno-format-extra-args
+CFLAGS=-ansi -pedantic -g -O2 -Wall -Wextra -Isrc -rdynamic -DNDEBUG $(OPTFLAGS) $(WFLAGS)
 LDLIBS=-ldl $(OPTLIBS)
 PREFIX?=/usr/local
 
@@ -13,7 +14,9 @@ SO_TARGET=$(patsubst %.a, %.so, $(TARGET))
 
 all: $(TARGET) $(SO_TARGET) tests
 
-dev: CFLAGS=-g -Isrc -Wall -Wextra $(OPTFLAGS)
+dev: CFLAGS=-ansi -pedantic \
+	-g -Isrc -Wall -Wextra $(OPTFLAGS) \
+	$(WFLAGS)
 dev: all
 
 $(TARGET): CFLAGS += -fPIC

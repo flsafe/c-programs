@@ -61,4 +61,4 @@ char *all()
 	return NULL;
 }
 
-RUN_TESTS(all);
+RUN_TESTS(all)

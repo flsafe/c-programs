@@ -3,13 +3,13 @@
 
 void compact_str(char *str, int n)
 {
-	assert(str != NULL && n >= 0 && "str can not be null, n must be >= 0");
-	
 	char seen[256] = {0};
 	int read = 0;
 	int write = 0;
+	unsigned char c;
 
-	char c;
+	assert(str != NULL && n >= 0 && "str can not be null, n must be >= 0");
+
 	do {
 		c = str[read++];	
 
