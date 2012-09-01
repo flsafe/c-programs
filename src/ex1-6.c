@@ -16,7 +16,7 @@ void rotate_90(int **mat, int n)
 
 	for(i = 0 ; i < n/2 ; i++){
 		offset = 0;
-		for(j = 0 ; j < n-1 ; j++){
+		for(j = 0 ; j < dx - ax ; j++){
 			acpy = mat[ax][ay+offset];
 			bcpy = mat[bx+offset][by];
 			ccpy = mat[cx][cy-offset];
@@ -31,7 +31,7 @@ void rotate_90(int **mat, int n)
 		}
 		ax += 1; ay += 1;
 		bx += 1; by -= 1;
-		cx -= 1; by -= 1;
+		cx -= 1; cy -= 1;
 		dx -=1 ; dy += 1;
 	}
 }
