@@ -1,6 +1,6 @@
 #include <ex1-6.c>
-#include "minunit.h"
 #include <string.h>
+#include "minunit.h"
 
 void p_mat(int **mat, int n)
 {
@@ -60,9 +60,7 @@ char *n2x2()
 	mat[0][0] = 1; mat[1][0] = 0;
 	mat[0][1] = 0; mat[1][1] = 1;
 
-	p_mat(mat,n);
 	rotate_90(mat, n);
-	p_mat(mat,n);
 
 	mu_assert(mat[0][0] == 0, "0,0"); mu_assert(mat[1][0] == 1, "1,0");
 	mu_assert(mat[0][1] == 1, "0,1"); mu_assert(mat[1][1] == 0, "1,1");
@@ -135,10 +133,7 @@ char *n4x4(){
 	mat_e[0][2] = 0; mat_e[1][2] = 1; mat_e[2][2] = 0; mat_e[3][2] = 0;
 	mat_e[0][3] = 1; mat_e[1][3] = 0; mat_e[2][3] = 0; mat_e[3][3] = 0;
 
-	p_mat(mat, n);
-	p_mat(mat_e, n);
 	rotate_90(mat,n);
-	p_mat(mat, n);
 
 	for(i = 0 ; i < n ; i++){
 		mu_assert(0 == memcmp(mat[i], mat_e[i], n*sizeof(int)), "failed 4x4");
