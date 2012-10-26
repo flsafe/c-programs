@@ -45,7 +45,7 @@ char *test_list_1()
 	node *list = NULL;
 
 	list = push(1, list);
-	remove_duplicates(&list);
+	remove_duplicates_nobuff(&list);
 
 	mu_assert(1 == list->i, "Excpected list of size 1 to contain value 1");
 	mu_assert(NULL == list->next, "Expected list of size 1");
@@ -61,7 +61,7 @@ char *test_with_duplicates()
 	list = push(2, list);
 	list = push(1, list);
 
-	remove_duplicates(&list);
+	remove_duplicates_nobuff(&list);
 
 	mu_assert(2 == list_len(list), "Expected list len to be 2");
 	mu_assert(1 == list_count(list, 1), "Expected list to have 1 value 1");
@@ -78,7 +78,7 @@ char *test_without_duplicates()
 	list = push(2, list);
 	list = push(3, list);
 
-	remove_duplicates(&list);
+	remove_duplicates_nobuff(&list);
 
 	mu_assert(3 == list_len(list), "Expected list len to be 2");
 	mu_assert(1 == list_count(list, 1), "Expected list to have 1 value 1");
@@ -92,7 +92,7 @@ char *test_with_empty()
 {
 	node *list = NULL;
 
-	remove_duplicates(&list);
+	remove_duplicates_nobuff(&list);
 	mu_assert(NULL == list, "Failed with empty list, expected NULL");
 
 	return NULL;

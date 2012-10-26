@@ -35,3 +35,40 @@ void remove_duplicates(node **head)
 
 	*head = new_list;
 }
+
+int in_list(node *list, int i)
+{
+	node *curr = NULL;
+
+	for(curr = list ; curr ; curr = curr->next){
+		if(i == curr->i){
+			return 1;
+		}
+	}
+
+	return 0;
+}
+
+void remove_duplicates_nobuff(node **list)
+{
+	node *new_list = NULL;
+	node *curr = NULL, *next = NULL;
+
+	if(NULL == *list) return;
+
+	curr = *list;
+	do{
+		next = curr->next;
+
+		if(in_list(next, curr->i)){
+			free(curr);	
+		}
+		else{
+			curr->next = new_list;
+			new_list = curr;
+		}
+		curr = next;	
+	} while(curr);
+
+	*list = new_list;
+}
