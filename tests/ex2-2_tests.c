@@ -1,4 +1,4 @@
-#include <ex1-10.c>
+#include <ex2-2.c>
 #include "minunit.h"
 
 int push(node **list, int i)
