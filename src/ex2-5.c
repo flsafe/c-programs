@@ -15,14 +15,10 @@ node *get_cyc_start(node *h)
 	if(NULL == h) return NULL;
 
 	f = s = h;
-	while(1){
-		f = f->next;
-		if(NULL == f) break;
-		f = f->next;
-		if(NULL == f) break;
+	while(f && f->next){
+		f = f->next->next;
 		s = s->next;
-
-		if(f == s) break;
+		if(s == f) break;
 	}
 
 	/* No cycle */
