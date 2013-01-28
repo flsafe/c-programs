@@ -29,8 +29,8 @@ char *n1x1()
 	int i = 0;
 	int n = 0;
 
-	int **mat = malloc(1);
-	mat[0] = malloc(1);
+	int **mat = malloc(1 * sizeof(int*));
+	mat[0] = malloc(1 * sizeof(int*));
 
 	mat[0][0] = 1;
 
@@ -52,7 +52,7 @@ char *n2x2()
 	int i = 0;
 	int n = 2;
 
-	int **mat = malloc(n);
+	int **mat = malloc(n * sizeof(int*));
 	for(i = 0 ; i < n ; i++){
 		mat[i] = malloc(n);
 	}
@@ -77,7 +77,7 @@ char *n3x3()
 	int i = 0, n = 3;
 	int **mat = NULL, **mat_exp = NULL;
 
-	mat = malloc(n * sizeof(int));
+	mat = malloc(n * sizeof(int*));
 	for(i = 0 ; i < n ; i++){
 		mat[i] = malloc(n * sizeof(int));
 	}
@@ -86,9 +86,9 @@ char *n3x3()
 	mat[0][1] = 0; mat[1][1] = 1; mat[2][1] = 0;
 	mat[0][2] = 0; mat[1][2] = 0; mat[2][2] = 1;
 
-	mat_exp = malloc(n * sizeof(int));
+	mat_exp = malloc(n * sizeof(int*));
 	for(i = 0 ; i < n ; i++){
-		mat_exp[i] = malloc(n * sizeof(int));
+		mat_exp[i] = malloc(n * sizeof(int*));
 	}
 
 	mat_exp[0][0] = 0; mat_exp[1][0] = 0; mat_exp[2][0] = 1;
@@ -113,9 +113,9 @@ char *n4x4(){
 	int i = 0, n = 4;
 	int **mat = NULL, **mat_e = NULL;
 
-	mat = malloc(n * sizeof(int));
+	mat = malloc(n * sizeof(int*));
 	for(i = 0 ; i < n ; i++){
-		mat[i] = malloc(n * sizeof(int));
+		mat[i] = malloc(n * sizeof(int*));
 	}
 
 	mat[0][0] = 1; mat[1][0] = 0; mat[2][0] = 0; mat[3][0] = 0;
@@ -123,9 +123,9 @@ char *n4x4(){
 	mat[0][2] = 0; mat[1][2] = 0; mat[2][2] = 1; mat[3][2] = 0;
 	mat[0][3] = 0; mat[1][3] = 0; mat[2][3] = 0; mat[3][3] = 1;
 
-	mat_e = malloc(n * sizeof(int));
+	mat_e = malloc(n * sizeof(int*));
 	for(i = 0 ; i < n ; i++){
-		mat_e[i] = malloc(n * sizeof(int));
+		mat_e[i] = malloc(n * sizeof(int*));
 	}
 
 	mat_e[0][0] = 0; mat_e[1][0] = 0; mat_e[2][0] = 0; mat_e[3][0] = 1;
