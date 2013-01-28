@@ -1,3 +1,4 @@
+CC=gcc-4.2
 WFLAGS=-Wno-variadic-macros -Wno-format-extra-args
 CFLAGS=-ansi -pedantic -g -O2 -Wall -Wextra -Isrc -rdynamic -DNDEBUG $(OPTFLAGS) $(WFLAGS)
 LDLIBS=-ldl $(OPTLIBS)
