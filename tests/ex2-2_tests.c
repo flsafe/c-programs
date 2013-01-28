@@ -15,7 +15,6 @@ int push(node **list, int i)
 
 char *test_list_len1()
 {
-	int r = 0;
 	node *list = NULL;
 
 	mu_assert(push(&list, 1), "Test setup failed");
@@ -38,7 +37,6 @@ char *test_list_nth_past_len1()
 
 char *test_nth_len4()
 {
-	int r = 0;
 	node *list = NULL, *n = NULL;
 
 	mu_assert(push(&list, 1), "Test setup failed");
