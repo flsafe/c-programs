@@ -30,7 +30,7 @@ char *n1x1()
 	int n = 0;
 
 	int **mat = malloc(1 * sizeof(int*));
-	mat[0] = malloc(1 * sizeof(int*));
+	mat[0] = malloc(1 * sizeof(int));
 
 	mat[0][0] = 1;
 
@@ -54,7 +54,7 @@ char *n2x2()
 
 	int **mat = malloc(n * sizeof(int*));
 	for(i = 0 ; i < n ; i++){
-		mat[i] = malloc(n);
+		mat[i] = malloc(n * sizeof(int));
 	}
 
 	mat[0][0] = 1; mat[1][0] = 0;
@@ -88,7 +88,7 @@ char *n3x3()
 
 	mat_exp = malloc(n * sizeof(int*));
 	for(i = 0 ; i < n ; i++){
-		mat_exp[i] = malloc(n * sizeof(int*));
+		mat_exp[i] = malloc(n * sizeof(int));
 	}
 
 	mat_exp[0][0] = 0; mat_exp[1][0] = 0; mat_exp[2][0] = 1;
@@ -115,7 +115,7 @@ char *n4x4(){
 
 	mat = malloc(n * sizeof(int*));
 	for(i = 0 ; i < n ; i++){
-		mat[i] = malloc(n * sizeof(int*));
+		mat[i] = malloc(n * sizeof(int));
 	}
 
 	mat[0][0] = 1; mat[1][0] = 0; mat[2][0] = 0; mat[3][0] = 0;
@@ -125,7 +125,7 @@ char *n4x4(){
 
 	mat_e = malloc(n * sizeof(int*));
 	for(i = 0 ; i < n ; i++){
-		mat_e[i] = malloc(n * sizeof(int*));
+		mat_e[i] = malloc(n * sizeof(int));
 	}
 
 	mat_e[0][0] = 0; mat_e[1][0] = 0; mat_e[2][0] = 0; mat_e[3][0] = 1;

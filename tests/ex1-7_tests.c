@@ -31,12 +31,12 @@ char *test4x4()
 
 	m = malloc(width * sizeof(int*));
 	for(c = 0 ; c < width ; c++){
-		m[c] = malloc(height * sizeof(int*));
+		m[c] = malloc(height * sizeof(int));
 	}
 
 	me = malloc(width * sizeof(int*));
 	for(c = 0 ; c < width ; c++){
-		me[c] = malloc(height * sizeof(int*));
+		me[c] = malloc(height * sizeof(int));
 	}
 
 	m[0][0]= 0; m[1][0]= 0 ; m[2][0]= 0; m[3][0]= 0;
