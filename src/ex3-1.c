@@ -30,8 +30,6 @@ int stack_push(Stack *s, int stack_num, int e){
 	top = bottom + (s->size / 3);
 	index = s->stack_indexes[stack_num];
 	
-	printf("index: %d, top: %d\n", index, top);
-	
 	if(index < top){
 		s->stack[index] = e;
 		s->stack_indexes[stack_num]++;
@@ -40,4 +38,25 @@ int stack_push(Stack *s, int stack_num, int e){
 	else{
 		return 0;
 	}
+}
+
+int stack_pop(Stack *s, int stack_num, int *error){
+	int bottom, index;
+	
+	if(stack_num < 0 || stack_num > 2 || NULL == s){
+		*error = 1;
+		return 0;
+	}
+	
+	index = s->stack_indexes[stack_num];
+	bottom = (s->size / 3) * stack_num;
+	if(index <= bottom){
+		*error = 1; 
+		return 0;
+	}
+	
+	s->stack_indexes[stack_num]--;
+	index = s->stack_indexes[stack_num];
+	*error = 0;
+	return s->stack[index]; 
 }
