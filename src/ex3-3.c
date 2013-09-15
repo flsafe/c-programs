@@ -26,7 +26,6 @@ int s_push(node **stack, int val){
 	n->val = val;
 	n->next = *stack;
 	*stack = n;
-
 	return 1;
 
 error:
@@ -100,12 +99,14 @@ int pop_multistack(multistack *stack, int *out_val){
 	node **plate_stack = NULL;
 
 	check(stack, "Arg stack can't be null", NULL);
+	check(out_val, "Arg out_val can't be null", NULL);
 
 	if(stack->size == 0) return 0;
-	stack_index = stack->size/stack->per_stack_size;
+	stack_index = ((stack->size-1)/stack->per_stack_size);
 	plate_stack = &stack->plates[stack_index];
 
 	if(s_pop(plate_stack, out_val)){
+		stack->size--;
 		return 1;
 	} else {
 		return 0;
